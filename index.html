@@ -3,54 +3,41 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Kink Jars</title>
-<meta name="description" content="Fill your jars, pick your colour, save your picture.">
-<meta property="og:title" content="Kink Jars">
-<meta property="og:description" content="Fill your jars, pick your colour, save your picture.">
+<title>CSU Jars</title>
+<meta name="description" content="Fill your jars, pick your color, save your picture.">
+<meta property="og:title" content="CSU Jars">
+<meta property="og:description" content="Fill your jars, pick your color, save your picture.">
 <meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Permanent+Marker&family=Nunito:wght@400;700;800&display=swap" rel="stylesheet">
 <style>
-  @font-face{font-family:Oswald;font-style:normal;font-weight:500 700;font-display:swap;src:url(fonts/oswald.woff2) format("woff2")}
-  @font-face{font-family:Nunito;font-style:normal;font-weight:400 800;font-display:swap;src:url(fonts/nunito.woff2) format("woff2")}
-  @font-face{font-family:"Permanent Marker";font-style:normal;font-weight:400;font-display:swap;src:url(fonts/permanent-marker.woff2) format("woff2")}
-  @font-face{font-family:"Atkinson Hyperlegible";font-style:normal;font-weight:400;font-display:swap;src:url(fonts/atkinson-hyperlegible-400.woff2) format("woff2")}
-  @font-face{font-family:"Atkinson Hyperlegible";font-style:normal;font-weight:700;font-display:swap;src:url(fonts/atkinson-hyperlegible-700.woff2) format("woff2")}
-  :root{--c:#e63946;--on-c:#fff;--ink:#1d1a17;--bg:#fbf6ef;--card:#fff;--muted:#6b625a;--line:#e9e0d5;--head:Oswald,sans-serif;--body:Nunito,system-ui,sans-serif}
-  /* Easy-read mode: Atkinson Hyperlegible has distinct shapes for I, l, 1, b, d, p and q; spacing follows BDA advice. */
-  html.easy{--head:"Atkinson Hyperlegible",sans-serif;--body:"Atkinson Hyperlegible",system-ui,sans-serif}
-  html.easy body{letter-spacing:.03em;word-spacing:.12em;line-height:1.65}
-  html.easy .qlabel,html.easy h1,html.easy h2,html.easy .step{letter-spacing:.02em}
+  :root{--c:#e63946;--on-c:#fff;--ink:#1d1a17;--bg:#fbf6ef;--card:#fff;--muted:#6b625a;--line:#e9e0d5}
   *{box-sizing:border-box}
-  [hidden]{display:none!important}
   html{-webkit-text-size-adjust:100%}
-  body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:18px;line-height:1.45;padding-bottom:110px}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:Nunito,system-ui,sans-serif;font-size:18px;line-height:1.45;padding-bottom:110px}
   @media(min-width:960px){body{padding-bottom:40px}}
   .wrap{max-width:1180px;margin:0 auto;padding:28px 16px}
   header{margin-bottom:22px}
-  header h1{font-family:var(--head);font-weight:700;font-size:clamp(44px,9vw,68px);margin:0;line-height:1}
+  header h1{font-family:Oswald,sans-serif;font-weight:700;font-size:clamp(44px,9vw,68px);margin:0;line-height:1}
   header h1 span{color:var(--c);-webkit-text-stroke:2px var(--ink);paint-order:stroke fill}
   header p{margin:10px 0 0;color:var(--muted);max-width:640px}
-  .easy-toggle{display:inline-flex;align-items:center;gap:10px;margin-top:14px;font-weight:700;font-size:16px}
-  .easy-toggle input{width:22px;height:22px;accent-color:var(--ink)}
-  .layout{display:grid;gap:24px;grid-template-columns:minmax(0,1fr)}
-  @media(min-width:960px){.layout{grid-template-columns:minmax(0,1fr) 430px}.side{align-self:start}}
-  /* Only stick the poster column on screens tall enough for it, and scale the preview to the window
-     so the column always fits, however many jars there are. Shorter screens scroll normally. */
-  @media(min-width:960px) and (min-height:700px){.side{position:sticky;top:20px}.side .poster{width:auto;max-width:100%;max-height:calc(100vh - 400px);margin:0 auto}}
+  .layout{display:grid;gap:24px}
+  @media(min-width:960px){.layout{grid-template-columns:minmax(0,1fr) 430px}.side{position:sticky;top:20px;align-self:start}}
   .panel{background:var(--card);border:2px solid var(--line);border-radius:22px;padding:20px;margin-bottom:20px}
-  .step{font-family:var(--head);font-weight:600;font-size:14px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
-  h2{font-family:var(--head);font-weight:600;font-size:27px;margin:2px 0 12px;line-height:1.15}
+  .step{font-family:Oswald,sans-serif;font-weight:600;font-size:14px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+  h2{font-family:Oswald,sans-serif;font-weight:600;font-size:27px;margin:2px 0 12px;line-height:1.15}
   .hint{color:var(--muted);font-size:16px;margin:-4px 0 14px}
   input[type=text]{font:inherit;font-size:20px;width:100%;padding:14px 16px;border:2px solid var(--line);border-radius:14px;background:#fff;color:var(--ink)}
   input[type=text]:focus{border-color:var(--ink);outline:none}
   button{font:inherit;cursor:pointer;color:var(--ink)}
-  a:focus-visible,button:focus-visible,input:focus-visible{outline:3px solid var(--ink);outline-offset:3px}
+  button:focus-visible,input:focus-visible{outline:3px solid var(--ink);outline-offset:3px}
 
-  /* colour picker */
+  /* color picker */
   .picker{display:grid;gap:18px}
   @media(min-width:620px){.picker{grid-template-columns:1fr 170px;align-items:center}}
-  .swatches{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:10px;max-width:420px}
-  @media(max-width:420px){.swatches{grid-template-columns:repeat(4,minmax(0,1fr))}}
-  .sw{aspect-ratio:1;border-radius:50%;border:3px solid #fff;box-shadow:0 0 0 2px var(--line);padding:0}
+  .swatches{display:grid;grid-template-columns:repeat(6,1fr);gap:10px;max-width:420px}
+  .sw{aspect-ratio:1;border-radius:50%;border:3px solid #fff;box-shadow:0 0 0 2px var(--line);padding:0;min-width:40px}
   .sw[aria-pressed=true]{box-shadow:0 0 0 3px var(--ink)}
   .sliders{display:grid;gap:12px;margin-top:16px;max-width:420px}
   .sl{display:grid;grid-template-columns:52px 1fr 44px;align-items:center;gap:10px;font-weight:700;font-size:16px}
@@ -58,12 +45,6 @@
   input[type=range]{-webkit-appearance:none;appearance:none;width:100%;height:26px;border-radius:13px;border:2px solid var(--ink);margin:0;background:#ccc}
   input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:30px;height:30px;border-radius:50%;background:#fff;border:3px solid var(--ink);box-shadow:0 2px 4px rgba(0,0,0,.25)}
   input[type=range]::-moz-range-thumb{width:26px;height:26px;border-radius:50%;background:#fff;border:3px solid var(--ink)}
-  .pride{margin-top:16px;max-width:420px}
-  .pride-list{display:flex;flex-wrap:wrap;gap:8px;margin-top:6px}
-  .flag{display:inline-flex;align-items:center;gap:8px;background:#fff;border:2px solid var(--ink);border-radius:999px;padding:5px 12px 5px 6px;font-weight:700;font-size:15px}
-  .flag[aria-pressed=true]{background:var(--ink);color:#fff}
-  .stripes{width:26px;height:20px;border-radius:5px;border:2px solid var(--ink);background-clip:padding-box}
-  .flag[aria-pressed=true] .stripes{border-color:#fff}
   .hexrow{display:flex;gap:10px;align-items:center;margin-top:14px;flex-wrap:wrap}
   .hexrow input{width:130px;font-size:18px;padding:10px 12px;font-family:ui-monospace,Menlo,monospace;text-transform:uppercase}
   .ghost{background:#fff;border:2px solid var(--ink);border-radius:999px;padding:9px 16px;font-weight:700;font-size:16px}
@@ -76,18 +57,16 @@
   .q:first-of-type{border-top:0}
   .q canvas{width:76px;height:124px}
   .qnum{font-size:14px;color:var(--muted);font-weight:700}
-  .qlabel{font-family:var(--head);font-weight:600;font-size:25px;line-height:1.1;margin:2px 0 10px}
+  .qlabel{font-family:Oswald,sans-serif;font-weight:600;font-size:25px;line-height:1.1;margin:2px 0 10px}
   .scale{display:grid;grid-template-columns:repeat(5,1fr);gap:7px;max-width:380px}
-  .scale button{height:52px;border-radius:14px;border:2px solid var(--ink);background:#fff;font-family:var(--head);font-weight:600;font-size:22px;transition:transform .08s}
+  .scale button{height:52px;border-radius:14px;border:2px solid var(--ink);background:#fff;font-family:Oswald,sans-serif;font-weight:600;font-size:22px;transition:transform .08s}
   .scale button:active{transform:scale(.94)}
   .scale button[aria-pressed=true]{background:var(--c);color:var(--on-c);box-shadow:0 3px 0 var(--ink)}
-  .nope{margin-top:10px;background:none;border:2px dashed var(--muted);border-radius:999px;padding:6px 14px;font-weight:700;font-size:15px;color:var(--muted)}
-  .nope[aria-pressed=true]{border-style:solid;border-color:var(--ink);background:var(--ink);color:#fff}
   .ends{display:flex;justify-content:space-between;max-width:380px;font-size:13px;color:var(--muted);font-weight:700;margin-top:5px}
 
   /* poster + save */
   .poster{width:100%;height:auto;display:block;border-radius:12px;border:2px solid var(--line);background:#fff}
-  .big{display:block;width:100%;margin-top:16px;padding:18px 20px;border-radius:18px;border:3px solid var(--ink);background:var(--c);color:var(--on-c);font-family:var(--head);font-weight:700;font-size:26px;letter-spacing:.02em;box-shadow:0 5px 0 var(--ink)}
+  .big{display:block;width:100%;margin-top:16px;padding:18px 20px;border-radius:18px;border:3px solid var(--ink);background:var(--c);color:var(--on-c);font-family:Oswald,sans-serif;font-weight:700;font-size:26px;letter-spacing:.02em;box-shadow:0 5px 0 var(--ink)}
   .big:active{transform:translateY(3px);box-shadow:0 2px 0 var(--ink)}
   .small-links{display:flex;justify-content:space-between;gap:10px;margin-top:14px;font-size:15px;color:var(--muted)}
   .linkbtn{background:none;border:0;padding:4px 0;text-decoration:underline;color:var(--muted);font-size:15px}
@@ -98,21 +77,12 @@
   .bar .big{width:auto;margin:0;padding:12px 22px;font-size:21px;box-shadow:0 4px 0 var(--ink)}
   @media(min-width:960px){.bar{display:none}}
 
-  #modal,#ageGate{border:0;padding:0;background:transparent;max-width:calc(100% - 32px);max-height:92vh}
-  #modal::backdrop,#ageGate::backdrop{background:rgba(20,16,12,.6)}
-  button:disabled{cursor:wait;opacity:.7}
+  #modal{position:fixed;inset:0;background:rgba(20,16,12,.6);display:flex;align-items:center;justify-content:center;padding:16px;z-index:10}
+  #modal[hidden]{display:none}
   .sheet{background:#fff;border-radius:22px;padding:20px;max-width:440px;width:100%;max-height:92vh;overflow:auto;text-align:center}
-  .sheet h3{font-family:var(--head);font-size:28px;margin:0 0 6px}
+  .sheet h3{font-family:Oswald,sans-serif;font-size:28px;margin:0 0 6px}
   .sheet p{margin:0 0 12px;color:var(--muted);font-size:16px}
   .sheet img{width:100%;border-radius:10px;border:2px solid var(--line)}
-  @media(min-width:960px){.cmp{max-width:calc(100% - 454px)}}
-  .cmp input[type=text]{font-size:16px;padding:10px 12px;margin:6px 0 10px;font-family:ui-monospace,Menlo,monospace}
-  .cmp-row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
-  .cmp-list{list-style:none;padding:0;margin:12px 0 0}
-  .cmp-list li{padding:8px 0;border-top:2px dashed var(--line);display:flex;justify-content:space-between;gap:12px}
-  .cmp-list li:first-child{border-top:0}
-  .cmp-list b{font-family:var(--head)}
-  .cmp-note{color:var(--muted);font-size:15px;margin-top:10px}
   .privacy{font-size:14px;color:var(--muted);text-align:center;margin-top:8px}
 </style>
 </head>
@@ -120,36 +90,31 @@
 <div class="wrap">
   <header>
     <h1>Fill your <span>jars</span></h1>
-    <label class="easy-toggle"><input type="checkbox" id="easy"> Easy-read font</label>
-    <p>Pick a colour, rate each one from 1 (a little) to 5 (overflowing), then save your picture. Not your thing? Skip it, or tap Not for me to put a cross on the jar. Adults only (18+).</p>
+    <p>Pick a color, rate each one from 1 (a little) to 5 (overflowing), then save your picture. Not your thing? Skip it and the jar stays empty.</p>
   </header>
 
   <div class="layout">
     <main>
       <section class="panel">
         <div class="step">Step 1</div>
-        <h2><label for="name">What's your name?</label></h2>
+        <h2>What's your name?</h2>
         <p class="hint">It goes on the blank line at the top. Nickname is fine, or leave it blank.</p>
         <input type="text" id="name" maxlength="24" autocomplete="off" placeholder="Your name">
       </section>
 
       <section class="panel">
         <div class="step">Step 2</div>
-        <h2>Pick your colour</h2>
+        <h2>Pick your color</h2>
         <div class="picker">
           <div>
-            <div class="swatches" id="swatches" role="group" aria-label="Colour choices"></div>
-            <div class="pride" role="group" aria-labelledby="prideLabel">
-              <div class="step" id="prideLabel">Pride palettes</div>
-              <div class="pride-list" id="pride"></div>
-            </div>
+            <div class="swatches" id="swatches" aria-label="Color choices"></div>
             <div class="sliders">
               <label class="sl">Red<input type="range" id="r" min="0" max="255"><output id="rv"></output></label>
               <label class="sl">Green<input type="range" id="g" min="0" max="255"><output id="gv"></output></label>
               <label class="sl">Blue<input type="range" id="b" min="0" max="255"><output id="bv"></output></label>
             </div>
             <div class="hexrow">
-              <input type="text" id="hex" maxlength="7" spellcheck="false" aria-label="Colour code">
+              <input type="text" id="hex" maxlength="7" spellcheck="false" aria-label="Color code">
               <button class="ghost" id="surprise" type="button">Surprise me</button>
             </div>
           </div>
@@ -173,392 +138,56 @@
         <h2>Your jars</h2>
         <canvas class="poster" id="poster" aria-label="Preview of your filled jars"></canvas>
         <button class="big" id="save" type="button">Save my jars</button>
-        <p id="status" role="status" aria-live="polite"></p><p class="privacy">Your name and answers are saved on this device. The page loads its fonts from its own server and makes no requests to other sites. <span class="ver">Version <span id="ver"></span>.</span></p><div class="small-links">
-          <span>Answers stay in this browser until you clear them or share an image.</span>
-          <button class="linkbtn" id="reset" type="button">Clear saved answers</button>
+        <div class="small-links">
+          <span>Nothing leaves your phone.</span>
+          <button class="linkbtn" id="reset" type="button">Start over</button>
         </div>
       </section>
     </aside>
   </div>
-  <section class="panel cmp" id="compare">
-    <div class="step">Optional</div>
-    <h2>Compare with someone</h2>
-    <p class="hint">Swap codes with a partner. The page only lists the jars you're both into. A code does contain all your answers, though, so only give it to someone you trust. Whatever matches, agree a safeword and talk about aftercare before you start.</p>
-    <div class="cmp-row"><button class="ghost" id="copyCode" type="button">Copy my code</button></div>
-    <input type="text" id="myCode" readonly hidden aria-label="Your code" spellcheck="false">
-    <label for="theirCode" style="display:block;margin-top:12px;font-weight:700;font-size:16px">Their code</label>
-    <input type="text" id="theirCode" placeholder="Paste their code here" autocomplete="off" spellcheck="false">
-    <div class="cmp-row"><button class="ghost" id="compareBtn" type="button">Compare</button></div>
-    <div id="compareResult" aria-live="polite"></div>
-  </section>
 </div>
 
-<div class="bar"><div class="bar-in"><span id="progress">0 of 35 filled</span><button class="big" id="saveBar" type="button">Save my jars</button></div></div>
+<div class="bar"><div class="bar-in"><span id="progress">0 of 28 filled</span><button class="big" id="saveBar" type="button">Save my jars</button></div></div>
 
-<dialog id="ageGate" aria-labelledby="agt">
-  <div class="sheet">
-    <h3 id="agt">Adults only</h3>
-    <p>This questionnaire covers adult sexual preferences. You need to be 18 or over to use it. It's a self-declaration; nothing is checked or stored except that you said yes.</p>
-    <button class="big" id="ageYes" type="button">I'm 18 or over</button>
-    <button class="ghost" id="ageNo" type="button" style="margin-top:14px">Leave</button>
-  </div>
-</dialog>
-
-<dialog id="modal" aria-labelledby="mt">
+<div id="modal" hidden role="dialog" aria-modal="true" aria-labelledby="mt">
   <div class="sheet">
     <h3 id="mt">Here are your jars!</h3>
-    <p id="exportStatus" role="status"></p>
-    <a class="big" id="downloadImage">Download PNG</a>
-    <button class="big" id="shareImage" type="button" hidden>Share image</button>
+    <p>If it didn't download, press and hold the picture (or right-click it) and choose “Save image.”</p>
     <img id="modalImg" alt="Your filled jars">
     <button class="big" id="closeModal" type="button">Done</button>
   </div>
-</dialog>
+</div>
 
 <script>
-/* Kinky Jars. Version history, newest first. Short notes so future me knows why it is the way it is.
-   1.5.0  WordPress plugin: [kink_jars] shortcode, built and released as a zip from this same file.
-   1.4.0  Seven new jars (brat, taming brats, primal, pet play, praise, blindfolds, watching others): a fifth poster row.
-   1.3.1  Review fixes: compare out of the sticky column, sticky only on tall screens, honest compare counts, font licences bundled.
-   1.3.0  Compare codes (only mutual jars shown), four more flags, poster follows easy-read.
-   1.2.0  Pride palettes: each jar takes the next colour of a flag. Hex values checked against Wikimedia and Wikipedia (see NOTES.md).
-   1.1.0  "Not for me" flag, easy-read font, 18+ gate, fonts bundled, CI and browser smoke tests.
-   1.0.0  First proper tidy: validated storage, answers keyed by ID, save and share reworked. */
-const VERSION = "1.5.0";
-/* Keep each ID with its label when moving questions. IDs are saved; wording can change. */
-const QUESTIONS = [
-  {
-    "id": "dom",
-    "label": [
-      "being",
-      "a dom"
-    ]
-  },
-  {
-    "id": "sub",
-    "label": [
-      "being",
-      "a sub"
-    ]
-  },
-  {
-    "id": "switch",
-    "label": [
-      "being",
-      "a switch"
-    ]
-  },
-  {
-    "id": "choking",
-    "label": [
-      "choking"
-    ]
-  },
-  {
-    "id": "choked",
-    "label": [
-      "being",
-      "choked"
-    ]
-  },
-  {
-    "id": "spanking",
-    "label": [
-      "spanking"
-    ]
-  },
-  {
-    "id": "spanked",
-    "label": [
-      "being",
-      "spanked"
-    ]
-  },
-  {
-    "id": "ddlg-mdlb",
-    "label": [
-      "ddlg / mdlb"
-    ]
-  },
-  {
-    "id": "age-play",
-    "label": [
-      "age",
-      "play"
-    ]
-  },
-  {
-    "id": "public",
-    "label": [
-      "doing stuff",
-      "in public"
-    ]
-  },
-  {
-    "id": "wax",
-    "label": [
-      "wax",
-      "play"
-    ]
-  },
-  {
-    "id": "water-sports",
-    "label": [
-      "water",
-      "sports"
-    ]
-  },
-  {
-    "id": "role-play",
-    "label": [
-      "role",
-      "play"
-    ]
-  },
-  {
-    "id": "cnc",
-    "label": [
-      "consensual",
-      "non consent"
-    ]
-  },
-  {
-    "id": "orgasms-controlled",
-    "label": [
-      "having",
-      "orgasms",
-      "controlled"
-    ]
-  },
-  {
-    "id": "controlling-orgasms",
-    "label": [
-      "controlling",
-      "orgasms"
-    ]
-  },
-  {
-    "id": "gags",
-    "label": [
-      "gags"
-    ]
-  },
-  {
-    "id": "feet",
-    "label": [
-      "feet"
-    ]
-  },
-  {
-    "id": "anal",
-    "label": [
-      "anal"
-    ]
-  },
-  {
-    "id": "tied-up",
-    "label": [
-      "being",
-      "tied up"
-    ]
-  },
-  {
-    "id": "tying",
-    "label": [
-      "tying",
-      "people up"
-    ]
-  },
-  {
-    "id": "degrading",
-    "label": [
-      "humiliating",
-      "or",
-      "degrading"
-    ]
-  },
-  {
-    "id": "degraded",
-    "label": [
-      "being",
-      "humiliated",
-      "or",
-      "degraded"
-    ]
-  },
-  {
-    "id": "bdsm",
-    "label": [
-      "bdsm"
-    ]
-  },
-  {
-    "id": "threesomes",
-    "label": [
-      "threesomes"
-    ]
-  },
-  {
-    "id": "sadism",
-    "label": [
-      "sadism"
-    ]
-  },
-  {
-    "id": "masochism",
-    "label": [
-      "masochism"
-    ]
-  },
-  {
-    "id": "spit",
-    "label": [
-      "spit"
-    ]
-  },
-  {
-    "id": "brat",
-    "label": [
-      "being",
-      "a brat"
-    ]
-  },
-  {
-    "id": "brat-taming",
-    "label": [
-      "taming",
-      "brats"
-    ]
-  },
-  {
-    "id": "primal",
-    "label": [
-      "primal",
-      "play"
-    ]
-  },
-  {
-    "id": "pet-play",
-    "label": [
-      "pet",
-      "play"
-    ]
-  },
-  {
-    "id": "praise",
-    "label": [
-      "praise"
-    ]
-  },
-  {
-    "id": "blindfolds",
-    "label": [
-      "blindfolds"
-    ]
-  },
-  {
-    "id": "voyeur",
-    "label": [
-      "watching",
-      "others"
-    ]
-  }
+/* ===== Edit the jars here. Each array is the label, one entry per line. ===== */
+const JARS = [
+  ["chass","students"],["cegs","students"],["cmns","students"],["cofes" , "students"],["ced","students"],["ccis" , "students"],["caa","students"],
+  ["7am" , "classes"],["library","tambay"],["love" , "entrada"],["love","sangka"],["love","lco days"],["7am" , "classes"],["long breaks","between", "scheds"],
+  ["field tambay"],["first","friend", "group"],["current", "friend","group"],["freedom","wall"],["campus", "dogs"],["campus","cats"],["facilities"],
+  ["organizations"],["instructors"],["attending","csu", "events"],["your","program"],["your","batch/classmates"],["carabao","center"],["campus","food"]
 ];
-const JARS = QUESTIONS.map(question => question.label);
 const PRESETS = ["#e63946","#ff5d8f","#ff8c42","#ffd23f","#7bd389","#2ec4b6","#3a86ff","#5b2a86","#c77dff","#8d1d3a","#8d5524","#2b2d42"];
-/* Pride palettes. Jar i takes colours[i % colours.length]; accent is what the buttons and sliders use.
-   Every hex value is a fill read straight out of the flag's SVG on Wikimedia Commons. Intersex is
-   yellow with a purple ring, so its jars simply alternate. White stripes stay white on purpose. */
-const PALETTES = [
-  { id: "rainbow", name: "Rainbow", accent: "#e40303", colours: ["#e40303", "#ff8c00", "#ffed00", "#008026", "#004dff", "#750787"] },
-  { id: "progress", name: "Progress", accent: "#e40303", colours: ["#e40303", "#ff8c00", "#ffed00", "#008026", "#004dff", "#750787", "#000000", "#613915", "#74d7ee", "#ffafc8", "#ffffff"] },
-  { id: "trans", name: "Trans", accent: "#5bcefa", colours: ["#5bcefa", "#f5a9b8", "#ffffff", "#f5a9b8", "#5bcefa"] },
-  { id: "bi", name: "Bi", accent: "#d60270", colours: ["#d60270", "#9b4f96", "#0038a8"] },
-  { id: "pan", name: "Pan", accent: "#ff218c", colours: ["#ff218c", "#ffd800", "#21b1ff"] },
-  { id: "ace", name: "Ace", accent: "#800080", colours: ["#000000", "#a3a3a3", "#ffffff", "#800080"] },
-  { id: "nonbinary", name: "Non-binary", accent: "#9c59d0", colours: ["#fff433", "#ffffff", "#9c59d0", "#2d2d2d"] },
-  { id: "lesbian", name: "Lesbian", accent: "#d52d00", colours: ["#d52d00", "#ef7627", "#ff9a56", "#ffffff", "#d162a4", "#b55690", "#a30262"] },
-  { id: "intersex", name: "Intersex", accent: "#7902aa", colours: ["#ffd800", "#7902aa"] },
-  { id: "genderqueer", name: "Genderqueer", accent: "#b57edc", colours: ["#b57edc", "#ffffff", "#4a8123"] },
-  { id: "aromantic", name: "Aromantic", accent: "#3da542", colours: ["#3da542", "#a7d379", "#ffffff", "#a9a9a9", "#000000"] }
-];
 const COLS = 7, INK = "#151311", PW = 1200;
 const ROWS = Math.ceil(JARS.length / COLS);
 const PH = 260 + (ROWS - 1) * 345 + 360;
-const STORE = "kinkjars-v1";
+const STORE = "csujars-v1";
 
-/* I keep IDs separate from the wording. Editing a label shouldn't rewrite someone's answers. */
-// This order is frozen. It's the only honest way to migrate the old positional answers.
-const LEGACY_IDS = ['dom', 'sub', 'switch', 'choking', 'choked', 'spanking', 'spanked', 'ddlg-mdlb', 'age-play', 'public', 'wax', 'water-sports', 'role-play', 'cnc', 'orgasms-controlled', 'controlling-orgasms', 'gags', 'feet', 'anal', 'tied-up', 'tying', 'degrading', 'degraded', 'bdsm', 'threesomes', 'sadism', 'masochism', 'spit'];
-const STORE_V2 = "kinkyjars-v2";
-function cleanState(saved) {
-  const source = saved && typeof saved === "object" ? saved : {};
-  const old = Array.isArray(source.answers);
-  const answers = {};
-  for (const { id } of QUESTIONS) {
-    const value = old ? source.answers[LEGACY_IDS.indexOf(id)] : source.answers?.[id];
-    answers[id] = Number.isInteger(value) && value >= 0 && value <= 5 ? value : 0;
-  }
-  const no = {};
-  if (source.no && typeof source.no === "object" && !Array.isArray(source.no)) {
-    for (const { id } of QUESTIONS) if (source.no[id] === true && answers[id] === 0) no[id] = true;
-  }
-  const palette = PALETTES.some(p => p.id === source.palette) ? source.palette : null;
-  return {
-    palette,
-    name: typeof source.name === "string" ? source.name.slice(0, 24) : "",
-    color: typeof source.color === "string" && /^#[0-9a-f]{6}$/i.test(source.color) ? source.color.toLowerCase() : "#e63946",
-    answers,
-    no
-  };
-}
-let state = cleanState(null);
-let storageWarning = "";
+/* ===== state ===== */
+let state = { name: "", color: "#e63946", answers: JARS.map(() => 0) };
 try {
-  const raw = localStorage.getItem(STORE_V2);
-  state = cleanState(JSON.parse(raw ?? localStorage.getItem(STORE) ?? "null"));
-} catch (e) {
-  storageWarning = "Saved answers couldn't be read. You can still fill in and save an image.";
-}
-const STORE_PREFS = "kinkjars-prefs";
-let easyRead = false;
-// The poster's small print follows the easy-read setting too; title and name keep their character.
-const smallFont = (weight, size) => easyRead ? `700 ${size}px "Atkinson Hyperlegible", sans-serif` : `${weight} ${size}px Oswald, 'Arial Narrow', sans-serif`;
-function setEasy(on) {
-  easyRead = on;
-  document.documentElement.classList.toggle("easy", on);
-  $("easy").checked = on;
-}
-function persist() {
-  try {
-    localStorage.setItem(STORE_V2, JSON.stringify(state));
-    localStorage.removeItem(STORE);
-  } catch (e) {
-    $("status").textContent = "This browser couldn't save your answers. Export an image before leaving.";
-  }
-}
+  const s = JSON.parse(localStorage.getItem(STORE) || "null");
+  if (s && Array.isArray(s.answers)) state = { ...state, ...s, answers: JARS.map((_, i) => s.answers[i] || 0) };
+} catch (e) {}
+const persist = () => { try { localStorage.setItem(STORE, JSON.stringify(state)); } catch (e) {} };
 
-/* ===== colour helpers ===== */
+/* ===== color helpers ===== */
 const hexToRgb = h => { h = h.replace("#", ""); if (h.length === 3) h = [...h].map(x => x + x).join(""); const n = parseInt(h, 16); return [n >> 16 & 255, n >> 8 & 255, n & 255]; };
 const rgbToHex = a => "#" + a.map(v => Math.round(v).toString(16).padStart(2, "0")).join("");
 const mix = (a, b, t) => a.map((v, i) => v + (b[i] - v) * t);
 const css = (a, al = 1) => `rgba(${a.map(Math.round).join(",")},${al})`;
 const lighten = (a, t) => css(mix(a, [255, 255, 255], t));
 const darken = (a, t) => css(mix(a, [0, 0, 0], t));
-const currentPalette = () => PALETTES.find(p => p.id === state.palette) || null;
-function jarRgb(i) {
-  const p = currentPalette();
-  return hexToRgb(p ? p.colours[i % p.colours.length] : state.color);
-}
-function luminance(rgb) {
-  const linear = rgb.map(v => { v /= 255; return v <= .04045 ? v / 12.92 : ((v + .055) / 1.055) ** 2.4; });
-  return linear[0] * .2126 + linear[1] * .7152 + linear[2] * .0722;
-}
-function textColour(rgb) {
-  const light = luminance(rgb), dark = 0;
-  const darkContrast = (Math.max(light, dark) + .05) / (Math.min(light, dark) + .05);
-  return darkContrast >= 1.05 / (light + .05) ? "#000" : "#fff";
-}
+const lum = ([r, g, b]) => (0.299 * r + 0.587 * g + 0.114 * b) / 255;
 
 function rng(seed) { return () => { seed = seed + 0x6D2B79F5 | 0; let t = Math.imul(seed ^ seed >>> 15, 1 | seed); t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t; return ((t ^ t >>> 14) >>> 0) / 4294967296; }; }
 
@@ -656,7 +285,7 @@ function jarParams(idx) {
   return P;
 }
 
-function drawJar(c, idx, level, rgb, notForMe = false) {
+function drawJar(c, idx, level, rgb) {
   const P = jarParams(idx), r = P.r, fill = css(rgb);
   c.save(); c.lineJoin = "round"; c.lineCap = "round";
 
@@ -688,12 +317,6 @@ function drawJar(c, idx, level, rgb, notForMe = false) {
   bodyPath(c); c.lineWidth = 4.5; c.strokeStyle = INK; c.stroke();
   c.lineWidth = 2.5; c.beginPath(); c.moveTo(18, 160); c.quadraticCurveTo(26, 165, 38, 164); c.moveTo(58, 164); c.quadraticCurveTo(70, 165, 78, 160); c.stroke();
   c.beginPath(); roundRect(c, 12, 20, 72, 14, 4); c.fillStyle = level === 5 ? fill : "#fff"; c.fill(); c.lineWidth = 4; c.stroke();
-
-  // not for me: a bold cross over the empty jar
-  if (notForMe) {
-    c.lineWidth = 7; c.strokeStyle = INK;
-    c.beginPath(); c.moveTo(24, 78); c.lineTo(72, 134); c.moveTo(72, 78); c.lineTo(24, 134); c.stroke();
-  }
 
   // overflow!
   if (level === 5) {
@@ -730,6 +353,7 @@ function drawJar(c, idx, level, rgb, notForMe = false) {
 
 /* ===== poster ===== */
 function drawPoster(canvas, scale) {
+  const rgb = hexToRgb(state.color);
   canvas.width = PW * scale; canvas.height = PH * scale;
   const c = canvas.getContext("2d");
   c.setTransform(scale, 0, 0, scale, 0, 0);
@@ -737,39 +361,34 @@ function drawPoster(canvas, scale) {
 
   c.fillStyle = INK; c.textBaseline = "alphabetic"; c.textAlign = "left";
   c.font = "700 104px Oswald, Impact, 'Arial Narrow', sans-serif";
-  const tw = c.measureText("Kink Jars").width, lineW = 360, gap = 26, x0 = (PW - lineW - gap - tw) / 2, base = 140;
+  const tw = c.measureText("CSU Jars").width, lineW = 360, gap = 26, x0 = (PW - lineW - gap - tw) / 2, base = 140;
   c.fillRect(x0, base - 5, lineW, 7);
-  c.fillText("Kink Jars", x0 + lineW + gap, base);
+  c.fillText("CSU Jars", x0 + lineW + gap, base);
   const name = state.name.trim();
   if (name) {
     let size = 66; c.font = `${size}px "Permanent Marker", "Comic Sans MS", cursive`;
     while (c.measureText(name).width > lineW - 12 && size > 20) { size -= 2; c.font = `${size}px "Permanent Marker", "Comic Sans MS", cursive`; }
     c.textAlign = "center"; c.fillText(name, x0 + lineW / 2, base - 18);
   }
-  c.textAlign = "center"; c.font = smallFont(500, 30); c.fillStyle = "#555";
-  c.fillText("(1 = a little  ·  5 = overflowing  ·  X = not for me)", PW / 2, 200);
-
-  const filled = Object.values(state.answers).filter(Boolean).length;
-  c.fillStyle = "#555"; c.textAlign = "center"; c.font = smallFont(500, 26);
-  const skipped = Object.keys(state.no).length;
-  c.fillText(`${filled} of ${JARS.length} jars filled` + (skipped ? ` · ${skipped} not for me` : ""), PW / 2, PH - 16);
+  c.textAlign = "center"; c.font = "500 30px Oswald, 'Arial Narrow', sans-serif"; c.fillStyle = "#555";
+  c.fillText("(1 = a little  ·  5 = overflowing)", PW / 2, 200);
 
   JARS.forEach((label, i) => {
     const col = i % COLS, row = Math.floor(i / COLS);
     const cx = PW / 2 + (col - (COLS - 1) / 2) * 150, top = 260 + row * 345;
-    c.save(); c.translate(cx - 48, top); drawJar(c, i, state.answers[QUESTIONS[i].id], jarRgb(i), !!state.no[QUESTIONS[i].id]); c.restore();
-    let size = 30; c.font = smallFont(600, size);
-    while (label.some(l => c.measureText(l).width > 140) && size > 18) { size--; c.font = smallFont(600, size); }
+    c.save(); c.translate(cx - 48, top); drawJar(c, i, state.answers[i], rgb); c.restore();
+    let size = 30; c.font = `600 ${size}px Oswald, 'Arial Narrow', sans-serif`;
+    while (label.some(l => c.measureText(l).width > 140) && size > 18) { size--; c.font = `600 ${size}px Oswald, 'Arial Narrow', sans-serif`; }
     c.fillStyle = INK; c.textAlign = "center";
     label.forEach((l, k) => c.fillText(l, cx, top + 170 + 44 + k * (size + 4)));
   });
 }
 
-function drawMini(canvas, idx, level, rgb, notForMe = false) {
+function drawMini(canvas, idx, level, rgb) {
   canvas.width = 152; canvas.height = 248;
   const c = canvas.getContext("2d");
   c.clearRect(0, 0, 152, 248); c.translate(28, 62);
-  drawJar(c, idx, level, rgb, notForMe);
+  drawJar(c, idx, level, rgb);
 }
 
 /* ===== UI ===== */
@@ -778,38 +397,24 @@ const qWrap = $("questions"), minis = [];
 JARS.forEach((label, i) => {
   const text = label.join(" ");
   const q = document.createElement("div"); q.className = "q";
-  q.innerHTML = `<canvas aria-hidden="true"></canvas><div><div class="qnum">${i + 1} of ${JARS.length}</div><div class="qlabel"></div><div class="scale" role="group"></div><div class="ends"><span>a little</span><span>overflowing</span></div><button class="nope" type="button" aria-pressed="false">Not for me</button></div>`;
+  q.innerHTML = `<canvas aria-hidden="true"></canvas><div><div class="qnum">${i + 1} of ${JARS.length}</div><div class="qlabel"></div><div class="scale" role="group"></div><div class="ends"><span>a little</span><span>overflowing</span></div></div>`;
   q.querySelector(".qlabel").textContent = text;
   const sc = q.querySelector(".scale"); sc.setAttribute("aria-label", text);
   for (let v = 1; v <= 5; v++) {
     const b = document.createElement("button"); b.type = "button"; b.textContent = v;
     b.setAttribute("aria-label", `${text}: ${v} out of 5`);
-    b.onclick = () => { const id = QUESTIONS[i].id; delete state.no[id]; state.answers[id] = state.answers[id] === v ? 0 : v; persist(); update(); };
+    b.onclick = () => { state.answers[i] = state.answers[i] === v ? 0 : v; persist(); update(); };
     sc.appendChild(b);
   }
-  const nope = q.querySelector(".nope");
-  nope.setAttribute("aria-label", `${text}: not for me`);
-  nope.onclick = () => { const id = QUESTIONS[i].id; if (state.no[id]) delete state.no[id]; else { state.no[id] = true; state.answers[id] = 0; } persist(); update(); };
-  minis.push({ canvas: q.querySelector("canvas"), buttons: [...sc.children], nope });
+  minis.push({ canvas: q.querySelector("canvas"), buttons: [...sc.children] });
   qWrap.appendChild(q);
 });
 
 const sw = $("swatches");
 PRESETS.forEach(hex => {
   const b = document.createElement("button"); b.type = "button"; b.className = "sw"; b.style.background = hex;
-  b.dataset.hex = hex; b.setAttribute("aria-label", "Colour " + hex);
+  b.dataset.hex = hex; b.setAttribute("aria-label", "Color " + hex);
   b.onclick = () => setColor(hex); sw.appendChild(b);
-});
-const prideList = $("pride");
-PALETTES.forEach(pal => {
-  const b = document.createElement("button"); b.type = "button"; b.className = "flag"; b.dataset.id = pal.id;
-  const n = pal.colours.length, stops = pal.colours.map((c, k) => `${c} ${k / n * 100}% ${(k + 1) / n * 100}%`).join(",");
-  const chip = document.createElement("span"); chip.className = "stripes"; chip.style.background = `linear-gradient(to bottom,${stops})`;
-  const label = document.createElement("span"); label.textContent = pal.name;
-  b.appendChild(chip); b.appendChild(label);
-  b.setAttribute("aria-label", `${pal.name} pride palette`);
-  b.onclick = () => setPalette(state.palette === pal.id ? null : pal.id);
-  prideList.appendChild(b);
 });
 ["r", "g", "b"].forEach((k, n) => $(k).addEventListener("input", () => {
   const a = hexToRgb(state.color); a[n] = +$(k).value; setColor(rgbToHex(a));
@@ -824,224 +429,61 @@ $("surprise").onclick = () => {
   const f = n => 255 * (l - a * Math.max(-1, Math.min(k(n) - 3, 9 - k(n), 1)));
   setColor(rgbToHex([f(0), f(8), f(4)]));
 };
-try { setEasy(JSON.parse(localStorage.getItem(STORE_PREFS) ?? "null")?.easy === true); } catch (e) { setEasy(false); }
-$("easy").addEventListener("change", e => {
-  setEasy(e.target.checked);
-  update();
-  try { localStorage.setItem(STORE_PREFS, JSON.stringify({ easy: e.target.checked })); } catch (err) { /* preference just won't stick */ }
-});
-$("ver").textContent = VERSION;
 $("name").value = state.name;
 $("name").addEventListener("input", e => { state.name = e.target.value; persist(); update(); });
 
-function setPalette(id) {
-  state.palette = id;
-  if (id) state.color = currentPalette().accent;
-  persist(); $("hex").value = state.color.toUpperCase(); update();
-}
-// Picking any single colour drops the palette. Otherwise the swatches would seem to do nothing.
-function setColor(hex, fromHexBox) { state.color = hex.toLowerCase(); state.palette = null; persist(); if (!fromHexBox) $("hex").value = state.color.toUpperCase(); update(); }
+function setColor(hex, fromHexBox) { state.color = hex.toLowerCase(); persist(); if (!fromHexBox) $("hex").value = state.color.toUpperCase(); update(); }
 
 let queued = false;
-let lastColour = null;
-const lastAnswers = new Map();
 function update() { if (queued) return; queued = true; requestAnimationFrame(() => { queued = false; render(); }); }
 function render() {
   const rgb = hexToRgb(state.color), root = document.documentElement.style;
-  root.setProperty("--c", state.color); root.setProperty("--on-c", textColour(rgb));
+  root.setProperty("--c", state.color); root.setProperty("--on-c", lum(rgb) > 0.6 ? INK : "#fff");
   ["r", "g", "b"].forEach((k, n) => {
     $(k).value = rgb[n]; $(k + "v").textContent = rgb[n];
     const lo = [...rgb], hi = [...rgb]; lo[n] = 0; hi[n] = 255;
     $(k).style.background = `linear-gradient(to right, ${css(lo)}, ${css(hi)})`;
   });
   if (document.activeElement !== $("hex")) $("hex").value = state.color.toUpperCase();
-  [...sw.children].forEach(b => b.setAttribute("aria-pressed", !state.palette && b.dataset.hex === state.color));
-  [...prideList.children].forEach(b => b.setAttribute("aria-pressed", b.dataset.id === state.palette));
-  const colourKey = state.color + "|" + (state.palette || "");
-  if (lastColour !== colourKey) {
-    drawMini($("pv1"), 3, 2, jarRgb(0)); drawMini($("pv2"), 9, 4, jarRgb(1)); drawMini($("pv3"), 2, 5, jarRgb(2));
-  }
+  [...sw.children].forEach(b => b.setAttribute("aria-pressed", b.dataset.hex === state.color));
+  drawMini($("pv1"), 3, 2, rgb); drawMini($("pv2"), 9, 4, rgb); drawMini($("pv3"), 2, 5, rgb);
   minis.forEach((m, i) => {
-    const id = QUESTIONS[i].id, answer = state.answers[id], no = !!state.no[id], key = no ? "no" : answer;
-    if (lastColour !== colourKey || lastAnswers.get(i) !== key) drawMini(m.canvas, i, answer, jarRgb(i), no);
-    lastAnswers.set(i, key);
-    m.nope.setAttribute("aria-pressed", no);
-    m.buttons.forEach((b, k) => b.setAttribute("aria-pressed", state.answers[QUESTIONS[i].id] === k + 1));
+    drawMini(m.canvas, i, state.answers[i], rgb);
+    m.buttons.forEach((b, k) => b.setAttribute("aria-pressed", state.answers[i] === k + 1));
   });
-  lastColour = colourKey;
-  const n = Object.values(state.answers).filter(Boolean).length;
-  const skipped = Object.keys(state.no).length;
-  $("progress").textContent = `${n} of ${JARS.length} filled` + (skipped ? `, ${skipped} not for me` : "");
+  const n = state.answers.filter(Boolean).length;
+  $("progress").textContent = `${n} of ${JARS.length} filled`;
   drawPoster($("poster"), 1);
 }
 
-let saving = false;
-let previewUrl = null;
-let saveTrigger = null;
-function releasePreview() {
-  $("modalImg").removeAttribute("src");
-  if (previewUrl) URL.revokeObjectURL(previewUrl);
-  previewUrl = null;
-}
-// Prepare the file first, then offer Share on a fresh tap. Mobile browsers can
-// drop the original gesture while a large PNG is being encoded. Charming.
-async function save(event) {
-  if (saving) return;
-  saving = true;
-  saveTrigger = event?.currentTarget || document.activeElement;
-  $("save").disabled = $("saveBar").disabled = true;
-  $("status").textContent = "Preparing your image…";
-  try {
-    await fontsReady;
-    const out = document.createElement("canvas");
-    drawPoster(out, 2);
-    const blob = await new Promise(resolve => out.toBlob(resolve, "image/png"));
-    if (!blob) throw new Error("PNG encoding returned no image");
-    const slug = state.name.trim().toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
-    const fname = (slug ? slug + "-" : "") + "kink-jars.png";
-    releasePreview();
-    previewUrl = URL.createObjectURL(blob);
-    $("modalImg").src = previewUrl;
-    $("downloadImage").href = previewUrl;
-    $("downloadImage").download = fname;
-    $("shareImage").hidden = true;
-    if (typeof File === "function" && navigator.canShare && navigator.share) {
-      const file = new File([blob], fname, { type: "image/png" });
-      try {
-        if (navigator.canShare({ files: [file] })) {
-          $("shareImage").hidden = false;
-          $("shareImage").onclick = async () => {
-            $("shareImage").disabled = true;
-            try { await navigator.share({ files: [file] }); }
-            catch (error) {
-              if (error.name !== "AbortError") $("exportStatus").textContent = "Sharing didn't work. Use Download PNG or save the picture below.";
-            } finally { $("shareImage").disabled = false; }
-          };
-        }
-      } catch (error) { /* Download still works if file sharing isn't supported. */ }
-    }
-    $("exportStatus").textContent = "Download the PNG, or press and hold the picture to save it.";
-    $("modal").showModal();
-    $("downloadImage").focus();
-    $("status").textContent = "Your image is ready.";
-  } catch (error) {
-    releasePreview();
-    $("status").textContent = "The image couldn't be prepared. Please try again; your answers are still here.";
-  } finally {
-    saving = false;
-    $("save").disabled = $("saveBar").disabled = false;
+async function save() {
+  const out = document.createElement("canvas");
+  drawPoster(out, 2);
+  const blob = await new Promise(res => out.toBlob(res, "image/png"));
+  const slug = state.name.trim().toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+  const fname = (slug ? slug + "-" : "") + "csu-jars.png";
+  const file = new File([blob], fname, { type: "image/png" });
+  const touch = matchMedia("(pointer: coarse)").matches;
+  if (touch && navigator.canShare && navigator.canShare({ files: [file] })) {
+    try { await navigator.share({ files: [file] }); return; }
+    catch (e) { if (e.name === "AbortError") return; }
   }
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement("a"); a.href = url; a.download = fname;
+  document.body.appendChild(a); a.click(); a.remove();
+  $("modalImg").src = url; $("modal").hidden = false; $("closeModal").focus();
 }
 $("save").onclick = save; $("saveBar").onclick = save;
-$("closeModal").onclick = () => $("modal").close();
-$("modal").addEventListener("click", event => {
-  const bounds = $("modal").getBoundingClientRect();
-  if (event.target === $("modal") && (event.clientX < bounds.left || event.clientX > bounds.right || event.clientY < bounds.top || event.clientY > bounds.bottom)) $("modal").close();
-});
-$("modal").addEventListener("close", () => {
-  // Keep the current URL alive for an in-flight download; release it on the next
-  // export or page exit. One retained image is enough, however enthusiastic we get.
-  saveTrigger?.focus();
-});
-addEventListener("pagehide", releasePreview);
+$("closeModal").onclick = () => { $("modal").hidden = true; };
+$("modal").addEventListener("click", e => { if (e.target.id === "modal") $("modal").hidden = true; });
 $("reset").onclick = () => {
-  if (!confirm("Clear your name and all saved answers from this browser?")) return;
-  state = cleanState({ color: state.color, palette: state.palette });
-  $("name").value = "";
-  try {
-    localStorage.removeItem(STORE);
-    localStorage.removeItem(STORE_V2);
-    $("status").textContent = "Your name and saved answers have been cleared.";
-  } catch (error) {
-    $("status").textContent = "The form is clear, but browser storage couldn't be cleared. Remove this site's data in browser settings.";
-  }
-  update();
-  scrollTo({ top: 0, behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth" });
+  if (!confirm("Empty all the jars and start over?")) return;
+  state.answers = JARS.map(() => 0); state.name = ""; $("name").value = ""; persist(); update(); scrollTo({ top: 0, behavior: "smooth" });
 };
 
-/* ===== compare =====
-   A code is "KJ1." plus base64url JSON: name, answered IDs and not-for-me IDs. Decoding goes back
-   through cleanState, so a pasted code gets exactly the same checks as browser storage. */
-function encodeCode(from = state) {
-  const a = {};
-  for (const { id } of QUESTIONS) if (from.answers[id]) a[id] = from.answers[id];
-  const json = JSON.stringify({ n: from.name.trim(), a, x: Object.keys(from.no) });
-  const bytes = new TextEncoder().encode(json);
-  return "KJ1." + btoa(String.fromCharCode(...bytes)).replace(/\+/g, "-").replace(/\//g, "_").replace(/=+$/, "");
-}
-function decodeCode(code) {
-  const m = /^KJ1\.([A-Za-z0-9_-]+)$/.exec(String(code).replace(/\s+/g, ""));
-  if (!m) return null;
-  try {
-    const b64 = m[1].replace(/-/g, "+").replace(/_/g, "/");
-    const json = new TextDecoder().decode(Uint8Array.from(atob(b64), ch => ch.charCodeAt(0)));
-    const raw = JSON.parse(json);
-    if (!raw || typeof raw !== "object") return null;
-    const no = {};
-    if (Array.isArray(raw.x)) for (const id of raw.x) if (typeof id === "string") no[id] = true;
-    return cleanState({ name: raw.n, answers: raw.a, no });
-  } catch (e) { return null; }
-}
-// Only mutual jars are listed. Jars on just one list are counted, never named; no's aren't counted at all.
-function compareWith(theirs) {
-  const both = [];
-  let other = 0;
-  QUESTIONS.forEach(({ id, label }) => {
-    const mine = state.answers[id], them = theirs.answers[id];
-    if (mine > 0 && them > 0) both.push({ text: label.join(" "), mine, them });
-    else if (mine > 0 || them > 0) other++;
-  });
-  both.sort((x, y) => Math.min(y.mine, y.them) - Math.min(x.mine, x.them) || (y.mine + y.them) - (x.mine + x.them));
-  return { both, other };
-}
-$("copyCode").onclick = async () => {
-  const code = encodeCode();
-  $("myCode").value = code;
-  try {
-    await navigator.clipboard.writeText(code);
-    $("status").textContent = "Code copied. Send it to your partner however you like.";
-  } catch (e) {
-    $("myCode").hidden = false; $("myCode").focus(); $("myCode").select?.();
-    $("status").textContent = "Couldn't reach the clipboard. Your code is in the box; copy it from there.";
-  }
-};
-$("compareBtn").onclick = () => {
-  const out = $("compareResult");
-  out.textContent = "";
-  const theirs = decodeCode($("theirCode").value);
-  const note = document.createElement("p"); note.className = "cmp-note";
-  if (!theirs) { note.textContent = "That doesn't look like a Kink Jars code. Check it was copied in full."; out.appendChild(note); return; }
-  const who = theirs.name.trim() || "them";
-  const { both, other } = compareWith(theirs);
-  const list = document.createElement("ul"); list.className = "cmp-list";
-  for (const row of both) {
-    const li = document.createElement("li");
-    const t = document.createElement("b"); t.textContent = row.text;
-    const v = document.createElement("span"); v.textContent = `you ${row.mine}, ${who} ${row.them}`;
-    li.appendChild(t); li.appendChild(v); list.appendChild(li);
-  }
-  note.textContent = (both.length ? `You're both into ${both.length} of these.` : "No jars in common yet.") + (other ? ` ${other} more are on only one of your lists; talk about those in person if you want to.` : "");
-  out.appendChild(note);
-  if (both.length) out.appendChild(list);
-};
-
-const STORE_AGE = "kinkjars-18";
-function ageConfirmed() { try { return localStorage.getItem(STORE_AGE) === "yes"; } catch (e) { return false; } }
-if (!ageConfirmed()) {
-  $("ageGate").addEventListener("cancel", event => event.preventDefault());
-  $("ageYes").onclick = () => {
-    try { localStorage.setItem(STORE_AGE, "yes"); } catch (e) { /* asked again next visit */ }
-    $("ageGate").close();
-  };
-  $("ageNo").onclick = () => { location.href = "about:blank"; };
-  $("ageGate").showModal();
-}
-
-$("status").textContent = storageWarning;
 render();
-const fontsReady = Promise.all(["700 104px Oswald", "600 30px Oswald", "500 30px Oswald", '66px "Permanent Marker"', '700 30px "Atkinson Hyperlegible"'].map(font => document.fonts.load(font)))
-  .catch(() => {}).then(() => document.fonts.ready);
-fontsReady.then(update);
+Promise.all(["700 104px Oswald, Impact, 'Arial Narrow', sans-serif", "600 30px Oswald", "500 30px Oswald, 'Arial Narrow', sans-serif", '66px "Permanent Marker"'].map(f => document.fonts.load(f)))
+  .catch(() => {}).then(() => document.fonts.ready).then(render);
 </script>
 </body>
 </html>
